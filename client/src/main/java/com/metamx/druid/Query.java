@@ -37,12 +37,13 @@ import java.util.Map;
 @JsonSubTypes(value = {
     @JsonSubTypes.Type(name = Query.SEARCH, value = SearchQuery.class),
     @JsonSubTypes.Type(name = Query.TIME_BOUNDARY, value = TimeBoundaryQuery.class),
-    @JsonSubTypes.Type(name = "groupBy", value= GroupByQuery.class)
+    @JsonSubTypes.Type(name = Query.GROUP_BY, value= GroupByQuery.class)
 })
 public interface Query<T>
 {
   public static final String SEARCH = "search";
   public static final String TIME_BOUNDARY = "timeBoundary";
+  public static final String GROUP_BY = "groupBy";
 
   public String getDataSource();
 
